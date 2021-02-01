@@ -36,12 +36,11 @@
 							<muleVersion>${app.runtime}</muleVersion>
 							<username>${username}</username>
 							<password>${password}</password>
-							<applicationName>${project.artifactId}</applicationName>
+							<applicationName>mule4deploy</applicationName>
 							<environment>DeployTest</environment>
 							<workerType>${workerType}</workerType>
 							<workers>1</workers>
 							<objectStoreV2>true</objectStoreV2>
-							<region>${region}</region>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
