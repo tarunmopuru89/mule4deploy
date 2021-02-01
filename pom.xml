@@ -21,8 +21,8 @@
 	<distributionManagement>
 				<repository>
 			<id>anypoint</id>
-            <name>CLoudHub Anypoint</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
+            <name>CloudHub Anypoint</name>
+            <url>https://anypoint.mulesoft.com/</url>
             <layout>default</layout>
 				</repository>
 			</distributionManagement>
