@@ -1,12 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Unit Test') { 
-      steps {
-        sh 'mvn clean test'
-      }
-    }
-    stage('Deploy CloudHub') { 
+    stage('Deploy') { 
       environment {
         ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
       }
