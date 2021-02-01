@@ -1,8 +1,5 @@
 pipeline{
  agent any
- environment {
-    ANYPOINT = credentials('ANYPOINT')
- }
  stages {
  	stage ('Build'){
  		steps {
@@ -19,5 +16,4 @@ pipeline{
  		}
  	}
  }
-
 }
