@@ -1,23 +1,26 @@
-pipeline{
- agent any
- environment {
-    ANYPOINT = credentials('ANYPOINT')
- }
- stages {
- 	stage ('Build'){
- 		steps {
- 			withMaven(maven:'maven'){
- 				sh 'mvn -f mule-jenkins-pipeline/pom.xml clean install'
- 			}
- 		}
- 	}
- 	stage ('Deploy'){
- 		steps {
- 			withMaven(maven:'maven'){
- 				sh 'mvn -f mule-jenkins-pipeline/pom.xml package deploy  -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Development -DmuleDeploy'
- 			}
- 		}
- 	}
- }
-
+pipeline {
+agent any
+stages {
+stage(‘Build Application’) {
+steps {
+bat ‘mvn clean install’
+}
+}
+stage(‘Test’) {
+steps {
+echo ‘Application in Testing Phase…’
+bat ‘mvn test’
+}
+}
+stage(‘Deploy CloudHub’) {
+environment {
+ANYPOINT_CREDENTIALS = credentials(‘anypointPlatform’)
+}
+steps {
+echo ‘Deploying mule project due to the latest code commit…’
+echo ‘Deploying to the configured environment….’
+bat ‘mvn package deploy -DmuleDeploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2’
+}
+}
+}
 }
