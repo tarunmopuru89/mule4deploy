@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Deploy CloudHub') { 
       steps {
-        bat 'mvn deploy -P cloudhub  -Danypoint.username=mopurutarun -Danypoint.password=Shaha@1103' 
+        bat 'mvn deploy -DmuleDeploy  -Danypoint.username=mopurutarun -Danypoint.password=Shaha@1103' 
       }
     }
   }
