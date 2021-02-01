@@ -19,7 +19,7 @@
 	</properties>
 
 	<distributionManagement>
-				<repository>
+			<repository>
 			<id>anypoint</id>
             <name>CloudHub Anypoint</name>
             <url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
@@ -65,9 +65,9 @@
         <configuration>
           <deploymentType>cloudhub</deploymentType>
           <muleVersion>${mule.version}</muleVersion> 
-          <username>${anypoint.username}</username> 
-          <password>${anypoint.password}</password> 
-          <applicationName>mule4deplo</applicationName>
+          <username>mopurutarun</username> 
+          <password>Shaha@1103</password> 
+          <applicationName>mule4deploy</applicationName>
           <environment>DeployTest</environment> 
           <uri>https://anypoint.mulesoft.com/</uri> 
           <workerType>MICRO</workerType>
