@@ -1,23 +1,23 @@
-pipeline {
-agent any
-stages {
-stage(‘Build’) {
-steps {
-bat ‘mvn clean install’
-}
-}
-stage(‘Test’) {
-steps {
-bat ‘mvn test’
-}
-}
-stage(‘Deploy’) {
-environment {
-ANYPOINT_CREDENTIALS = credentials(‘anypointPlatform’)
-}
-steps {
-bat ‘mvn package deploy -DmuleDeploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2’
-}
-}
-}
+pipeline{
+ agent any
+ environment {
+    ANYPOINT = credentials('ANYPOINT')
+ }
+ stages {
+ 	stage ('Build'){
+ 		steps {
+ 			withMaven(maven:'maven'){
+ 				sh 'mvn -f mule-jenkins-pipeline/pom.xml clean install'
+ 			}
+ 		}
+ 	}
+ 	stage ('Deploy'){
+ 		steps {
+ 			withMaven(maven:'maven'){
+ 				sh 'mvn -f mule-jenkins-pipeline/pom.xml package deploy  -Dusername=mopurutarun -Dpassword=Shaha@1103 -Denvironment=DeployTest -DmuleDeploy'
+ 			}
+ 		}
+ 	}
+ }
+
 }
