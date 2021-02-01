@@ -1,19 +1,18 @@
-pipeline{
- agent any
- stages {
- 	stage ('Build'){
- 		steps {
- 			withMaven(maven:'maven'){
- 				sh 'mvn -f mule-jenkins-pipeline/pom.xml clean install'
- 			}
- 		}
- 	}
- 	stage ('Deploy'){
- 		steps {
- 			withMaven(maven:'maven'){
- 				sh 'mvn -f mule-jenkins-pipeline/pom.xml package deploy  -Dusername=mopurutarun -Dpassword=Shaha@1103 -Denvironment=DeployTest -DmuleDeploy'
- 			}
- 		}
- 	}
- }
+pipeline {
+  agent any
+  stages {
+    stage('Unit Test') { 
+      steps {
+        sh 'mvn clean test'
+      }
+    }
+    stage('Deploy CloudHub') { 
+      environment {
+        ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
+      }
+      steps {
+        sh 'mvn deploy -P cloudhub -Dmule.version=3.9.0 -Danypoint.username=mopurutarun -Danypoint.password=Shaha@1103' 
+      }
+    }
+  }
 }
