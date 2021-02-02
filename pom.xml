@@ -19,13 +19,20 @@
 	</properties>
 
 	<distributionManagement>
-			<repository>
-			<id>anypoint</id>
-            <name>CloudHub Anypoint</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
-            <layout>default</layout>
-				</repository>
-			</distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<repository>
+			<id>cloudhub</id>
+			<url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>	
+		</repository>
+	</distributionManagement>
+
 <!--	<build>
 		<plugins>
 			<plugin>
@@ -65,8 +72,6 @@
         <configuration>
           <deploymentType>cloudhub</deploymentType>
           <muleVersion>${mule.version}</muleVersion> 
-          <username>mopurutarun</username> 
-          <password>Shaha@1103</password> 
           <applicationName>mule4deploy</applicationName>
           <environment>DeployTest</environment> 
           <uri>https://anypoint.mulesoft.com/</uri> 
@@ -104,29 +109,29 @@
 	</dependencies>
 
 	<repositories>
-          <repository>
-            <id>anypoint-exchange-v2</id>
-            <name>Anypoint Exchange</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
-            <layout>default</layout>
-        </repository>
-        <repository>
-            <id>mulesoft-releases</id>
-            <name>MuleSoft Releases Repository</name>
-            <url>https://repository.mulesoft.org/releases/</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>mulesoft-releases</id>
-            <name>mulesoft release repository</name>
-            <layout>default</layout>
-            <url>https://repository.mulesoft.org/releases/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+		<repository>
+			<id>Central</id>
+			<name>Central</name>
+			<url>http://repo1.maven.org/maven2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases Repository</name>
+			<url>http://repository.mulesoft.org/releases/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>mulesoft-release</id>
+			<name>mulesoft release repository</name>
+			<layout>default</layout>
+			<url>http://repository.mulesoft.org/releases/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
