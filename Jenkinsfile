@@ -18,7 +18,7 @@ bat 'mvn test'
         ANYPOINT_CREDENTIALS = credentials('anypointCredentials')
       }
       steps {
-        bat 'mvn package deploy -DmuleDeploy -DmuleVersion=4.3.0 -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2'
+        bat 'mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.3.0 -Danypoint.username=mopurutarun -Danypoint.password=Shaha@1103 -Denv=Sandbox -Dappname=myfirst -DvCore=Micro -Dworkers=1 -DaltDeploymentRepository=myinternalrepo::default::file:///C:/snapshots'
       }
     }
 }

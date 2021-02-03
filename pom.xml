@@ -25,7 +25,7 @@
 		</repository>
 	</distributionManagement>
 
-<!--	<build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -39,21 +39,23 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
-							<uri>https://anypoint.mulesoft.com/</uri>
-							<muleVersion>4.2.0</muleVersion>
-							<username>${username}</username>
-							<password>${password}</password>
-							<applicationName>mule4deploy</applicationName>
-							<environment>DeployTest</environment>
-							<workerType>${workerType}</workerType>
-							<workers>1</workers>
-							<objectStoreV2>true</objectStoreV2>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>${mule.version}</muleVersion>
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
+						<environment>${env}</environment>
+						<applicationName>${appname}</applicationName>
+						<businessGroup>${business}</businessGroup>
+						<workerType>${vCore}</workerType>
+						<workers>${workers}</workers>
+						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>  -->
-<profiles>	
+	</build>  
+	
+<!--<profiles>	
   <profile>
   <id>cloudhub</id>
   <build>
@@ -85,7 +87,7 @@
     </plugins>
   </build>
 </profile>
-</profiles>
+</profiles> -->
 
 	<dependencies>
         <dependency>
