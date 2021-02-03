@@ -5,7 +5,7 @@
 	<groupId>97c78d17-bb48-4f76-abb4-e95374cf3578</groupId>
 	<artifactId>mule4deploy</artifactId>
     <version>1.0.0</version>
-   <!-- <packaging>mule-application</packaging> -->
+    <packaging>mule-application</packaging> 
 
 	<name>mule4deploy</name>
 
