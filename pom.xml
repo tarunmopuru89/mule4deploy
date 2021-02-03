@@ -53,40 +53,6 @@
 			</plugin>
 		</plugins>
 	</build>  
-	
-<!--<profiles>	
-  <profile>
-  <id>cloudhub</id>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.mule.tools.maven</groupId>
-        <artifactId>mule-maven-plugin</artifactId>
-        <configuration>
-          <deploymentType>cloudhub</deploymentType>
-          <muleVersion>${mule.version}</muleVersion> 
-          <applicationName>mule4deploy</applicationName>
-          <environment>DeployTest</environment> 
-		  <username>mopurutarun</username>
-		  <password>Shaha@1103</password>
-          <uri>https://anypoint.mulesoft.com/</uri> 
-          <workerType>MICRO</workerType>
-          <workers>1</workers>
-        </configuration>
-        <executions>
-          <execution>
-            <id>deploy</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>deploy</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-</profile>
-</profiles> -->
 
 	<dependencies>
         <dependency>
