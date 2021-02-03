@@ -60,7 +60,7 @@
 				  <server>my.anypoint.credentials</server>
 				</cloudHubDeployment>
 			  </configuration>
-			<plugin>
+			</plugin>
 		</plugins>
 	</build>  
 
