@@ -15,7 +15,7 @@ pipeline {
 				orgId :'97c78d17-bb48-4f76-abb4-e95374cf3578',
 				requestMode : RequestMode.UPDATE , 
 				appName :'jenkins-deployplugin-api',
-				credentialsId :'CLOUDHUB_ACCESS', 
+				credentialsId :'anypointCredentials', 
 				muleVersion :'4.3.0',
 				region :'us-east-1', 
 				filePath :'target/*.jar',
