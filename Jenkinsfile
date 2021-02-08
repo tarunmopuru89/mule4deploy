@@ -13,7 +13,7 @@ pipeline {
             steps {
                 cloudhubDeployer(environmentId :'6a68c4d7-b535-4b9c-8462-52d2f2932193', 
 				orgId :'97c78d17-bb48-4f76-abb4-e95374cf3578',
-				requestMode : RequestMode.CREATE, 
+				requestMode : RequestMode.CREATE_OR_UPDATE, 
 				appName :'mule4deploy',
 				credentialsId :'anypointCredentials', 
 				muleVersion :'4.3.0',
