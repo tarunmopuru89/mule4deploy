@@ -9,6 +9,12 @@ pipeline {
 		bat 'mvn clean install'
 		}
 		}
+	stage('Test Application') {
+		steps {
+		echo 'Application is in Testing Phase'
+		bat 'mvn test'
+		}
+		}
    stage('Deploy') {
             steps {
                 cloudhubDeployer(environmentId :'6a68c4d7-b535-4b9c-8462-52d2f2932193', 
