@@ -7,7 +7,7 @@
     <version>1.0.0</version>
     <packaging>mule-application</packaging> 
 
-	<name>mule4deploy</name>
+	<name>mules4deploy</name>
 
     <description>This is a Mule 4 Application deplyed using CloudHub via Jenkins</description>
     <properties>
